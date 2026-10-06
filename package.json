@@ -1,0 +1,31 @@
+{
+  "name": "scambot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple text logger with user registration and admin approval",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server/index.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm install --prefix client --include=dev && npm run build --prefix client",
+    "start": "node server/index.js",
+    "install:all": "npm install && npm install --prefix client --include=dev"
+  },
+  "allowScripts": {
+    "better-sqlite3": true
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.4.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
